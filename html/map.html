@@ -1,0 +1,1897 @@
+<!DOCTYPE html>
+<head>
+   <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.css" />
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js"></script>
+
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+   <link rel="stylesheet" href="https://rawgit.com/lvoogdt/Leaflet.awesome-markers/2.0/develop/dist/leaflet.awesome-markers.css">
+   <script src="https://rawgithub.com/lvoogdt/Leaflet.awesome-markers/2.0/develop/dist/leaflet.awesome-markers.js"></script>
+
+
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/MarkerCluster.Default.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/MarkerCluster.css">
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/leaflet.markercluster-src.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/leaflet.markercluster.js"></script>
+
+   <link rel="stylesheet" href="https://birdage.github.io/Leaflet.awesome-markers/dist/leaflet.awesome.rotate.css">
+
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-dvf/0.2/leaflet-dvf.markers.min.js"></script>
+   
+   
+   
+
+   <style>
+
+      html, body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+
+      #map {
+        position:absolute;
+        top:0;
+        bottom:0;
+        right:0;
+        left:0;
+      }
+
+   </style>
+</head>
+
+<body>
+
+   <div class="folium-map" id="folium_4267224109a743ff9ebf52f2ddf0d662" style="width: 100%; height: 100%"></div>
+
+   <script>
+
+      
+
+      var base_tile = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          maxZoom: 18,
+          minZoom: 1,
+          attribution: 'Map data (c) <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'
+      });
+
+      var baseLayer = {
+        "Base Layer": base_tile
+      };
+
+      /*
+      addition of the wms layers
+      */
+
+      
+
+      /*
+      addition of the tile layers
+      */
+      
+
+      /*
+      list of layers to be added
+      */
+      var layer_list = {
+      
+      };
+
+      /*
+      Bounding box.
+      */
+      var southWest = L.latLng(-90, -180),
+          northEast = L.latLng(90, 180),
+          bounds = L.latLngBounds(southWest, northEast);
+
+      /*
+      Creates the map and adds the selected layers
+      */
+      var map = L.map('folium_4267224109a743ff9ebf52f2ddf0d662', {
+                                       center:[39.59869384765625, -74.93002319335938],
+                                       zoom: 7,
+                                       maxBounds: bounds,
+                                       layers: [base_tile]
+                                     });
+
+      L.control.layers(baseLayer, layer_list).addTo(map);
+
+      //cluster group
+      var clusteredmarkers = L.markerClusterGroup();
+      //section for adding clustered markers
+      
+      //add the clustered markers to the group anyway
+      map.addLayer(clusteredmarkers);
+
+      
+      var marker_1_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_1 = L.marker([44.8306, 
+							-75.3128],
+							{'icon':marker_1_icon}
+							);
+      marker_1.bindPopup("Base station: [ 44.83055496 -75.31277466]");
+      marker_1._popup.options.maxWidth = 300;
+      map.addLayer(marker_1)
+      
+      var marker_2_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_2 = L.marker([39.7258, 
+							-75.3443],
+							{'icon':marker_2_icon}
+							);
+      marker_2.bindPopup("Base station: [ 39.72580719 -75.3443222 ]");
+      marker_2._popup.options.maxWidth = 300;
+      map.addLayer(marker_2)
+      
+      var marker_3_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_3 = L.marker([36.8828, 
+							-76.3602],
+							{'icon':marker_3_icon}
+							);
+      marker_3.bindPopup("Base station: [ 36.8828392  -76.36019135]");
+      marker_3._popup.options.maxWidth = 300;
+      map.addLayer(marker_3)
+      
+      var marker_4_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_4 = L.marker([36.8829, 
+							-76.3601],
+							{'icon':marker_4_icon}
+							);
+      marker_4.bindPopup("Base station: [ 36.88285065 -76.36013794]");
+      marker_4._popup.options.maxWidth = 300;
+      map.addLayer(marker_4)
+      
+      var marker_5_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_5 = L.marker([40.1156, 
+							-74.0336],
+							{'icon':marker_5_icon}
+							);
+      marker_5.bindPopup("Base station: [ 40.1155777  -74.03357697]");
+      marker_5._popup.options.maxWidth = 300;
+      map.addLayer(marker_5)
+      
+      var marker_6_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_6 = L.marker([40.6013, 
+							-74.1085],
+							{'icon':marker_6_icon}
+							);
+      marker_6.bindPopup("Base station: [ 40.60134125 -74.10848999]");
+      marker_6._popup.options.maxWidth = 300;
+      map.addLayer(marker_6)
+      
+      var marker_7_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_7 = L.marker([44.9825, 
+							-74.8478],
+							{'icon':marker_7_icon}
+							);
+      marker_7.bindPopup("Base station: [ 44.98249817 -74.84777832]");
+      marker_7._popup.options.maxWidth = 300;
+      map.addLayer(marker_7)
+      
+      var marker_8_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_8 = L.marker([40.7673, 
+							-74.0191],
+							{'icon':marker_8_icon}
+							);
+      marker_8.bindPopup("Base station: [ 40.76729965 -74.01906586]");
+      marker_8._popup.options.maxWidth = 300;
+      map.addLayer(marker_8)
+      
+      var marker_9_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_9 = L.marker([40.789, 
+							-73.9298],
+							{'icon':marker_9_icon}
+							);
+      marker_9.bindPopup("Base station: [ 40.78895187 -73.92983246]");
+      marker_9._popup.options.maxWidth = 300;
+      map.addLayer(marker_9)
+      
+      var marker_10_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_10 = L.marker([36.9117, 
+							-76.0792],
+							{'icon':marker_10_icon}
+							);
+      marker_10.bindPopup("Base station: [ 36.91172409 -76.07923889]");
+      marker_10._popup.options.maxWidth = 300;
+      map.addLayer(marker_10)
+      
+      var marker_11_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_11 = L.marker([39.6319, 
+							-74.3535],
+							{'icon':marker_11_icon}
+							);
+      marker_11.bindPopup("Base station: [ 39.6318779  -74.35354614]");
+      marker_11._popup.options.maxWidth = 300;
+      map.addLayer(marker_11)
+      
+      var marker_12_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_12 = L.marker([44.7881, 
+							-75.4219],
+							{'icon':marker_12_icon}
+							);
+      marker_12.bindPopup("Base station: [ 44.78805542 -75.42194366]");
+      marker_12._popup.options.maxWidth = 300;
+      map.addLayer(marker_12)
+      
+      var marker_13_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_13 = L.marker([44.2628, 
+							-76.6775],
+							{'icon':marker_13_icon}
+							);
+      marker_13.bindPopup("Base station: [ 44.26277924 -76.67749786]");
+      marker_13._popup.options.maxWidth = 300;
+      map.addLayer(marker_13)
+      
+      var marker_14_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_14 = L.marker([38.9447, 
+							-74.884],
+							{'icon':marker_14_icon}
+							);
+      marker_14.bindPopup("Base station: [ 38.94473267 -74.88397217]");
+      marker_14._popup.options.maxWidth = 300;
+      map.addLayer(marker_14)
+      
+      var marker_15_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_15 = L.marker([44.3997, 
+							-75.9739],
+							{'icon':marker_15_icon}
+							);
+      marker_15.bindPopup("Base station: [ 44.39972305 -75.97388458]");
+      marker_15._popup.options.maxWidth = 300;
+      map.addLayer(marker_15)
+      
+      var marker_16_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_16 = L.marker([39.9704, 
+							-74.899],
+							{'icon':marker_16_icon}
+							);
+      marker_16.bindPopup("Base station: [ 39.97042084 -74.89901733]");
+      marker_16._popup.options.maxWidth = 300;
+      map.addLayer(marker_16)
+      
+      var marker_17_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_17 = L.marker([39.5615, 
+							-75.9297],
+							{'icon':marker_17_icon}
+							);
+      marker_17.bindPopup("Base station: [ 39.56153488 -75.92974854]");
+      marker_17._popup.options.maxWidth = 300;
+      map.addLayer(marker_17)
+      
+      var marker_18_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_18 = L.marker([45.0183, 
+							-74.7297],
+							{'icon':marker_18_icon}
+							);
+      marker_18.bindPopup("Base station: [ 45.01833344 -74.72972107]");
+      marker_18._popup.options.maxWidth = 300;
+      map.addLayer(marker_18)
+      
+      var marker_19_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_19 = L.marker([36.8838, 
+							-76.3524],
+							{'icon':marker_19_icon}
+							);
+      marker_19.bindPopup("Base station: [ 36.88378906 -76.35238647]");
+      marker_19._popup.options.maxWidth = 300;
+      map.addLayer(marker_19)
+      
+      var marker_20_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_20 = L.marker([45.5561, 
+							-73.3264],
+							{'icon':marker_20_icon}
+							);
+      marker_20.bindPopup("Base station: [ 45.55611038 -73.3263855 ]");
+      marker_20._popup.options.maxWidth = 300;
+      map.addLayer(marker_20)
+      
+      var marker_21_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_21 = L.marker([45.5491, 
+							-73.4967],
+							{'icon':marker_21_icon}
+							);
+      marker_21.bindPopup("Base station: [ 45.54908371 -73.49666595]");
+      marker_21._popup.options.maxWidth = 300;
+      map.addLayer(marker_21)
+      
+      var marker_22_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_22 = L.marker([36.73, 
+							-76.0089],
+							{'icon':marker_22_icon}
+							);
+      marker_22.bindPopup("Base station: [ 36.72996902 -76.00888824]");
+      marker_22._popup.options.maxWidth = 300;
+      map.addLayer(marker_22)
+      
+      var marker_23_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_23 = L.marker([37.1636, 
+							-76.5356],
+							{'icon':marker_23_icon}
+							);
+      marker_23.bindPopup("Base station: [ 37.16357422 -76.5355835 ]");
+      marker_23._popup.options.maxWidth = 300;
+      map.addLayer(marker_23)
+      
+      var marker_24_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_24 = L.marker([38.3277, 
+							-75.1967],
+							{'icon':marker_24_icon}
+							);
+      marker_24.bindPopup("Base station: [ 38.32770157 -75.19671631]");
+      marker_24._popup.options.maxWidth = 300;
+      map.addLayer(marker_24)
+      
+      var marker_25_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_25 = L.marker([37.9315, 
+							-75.3826],
+							{'icon':marker_25_icon}
+							);
+      marker_25.bindPopup("Base station: [ 37.93148804 -75.38259888]");
+      marker_25._popup.options.maxWidth = 300;
+      map.addLayer(marker_25)
+      
+      var marker_26_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_26 = L.marker([37.5576, 
+							-75.8291],
+							{'icon':marker_26_icon}
+							);
+      marker_26.bindPopup("Base station: [ 37.5575676  -75.82909393]");
+      marker_26._popup.options.maxWidth = 300;
+      map.addLayer(marker_26)
+      
+      var marker_27_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_27 = L.marker([37.8877, 
+							-76.6331],
+							{'icon':marker_27_icon}
+							);
+      marker_27.bindPopup("Base station: [ 37.88773727 -76.63310242]");
+      marker_27._popup.options.maxWidth = 300;
+      map.addLayer(marker_27)
+      
+      var marker_28_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_28 = L.marker([44.2558, 
+							-76.0033],
+							{'icon':marker_28_icon}
+							);
+      marker_28.bindPopup("Base station: [ 44.25583267 -76.00333405]");
+      marker_28._popup.options.maxWidth = 300;
+      map.addLayer(marker_28)
+      
+      var marker_29_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_29 = L.marker([45.4078, 
+							-73.5672],
+							{'icon':marker_29_icon}
+							);
+      marker_29.bindPopup("Base station: [ 45.40777969 -73.5672226 ]");
+      marker_29._popup.options.maxWidth = 300;
+      map.addLayer(marker_29)
+      
+      var marker_30_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_30 = L.marker([45.5491, 
+							-73.4967],
+							{'icon':marker_30_icon}
+							);
+      marker_30.bindPopup("Base station: [ 45.54908371 -73.49666595]");
+      marker_30._popup.options.maxWidth = 300;
+      map.addLayer(marker_30)
+      
+      var marker_31_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_31 = L.marker([43.2364, 
+							-77.0764],
+							{'icon':marker_31_icon}
+							);
+      marker_31.bindPopup("Base station: [ 43.23638916 -77.0763855 ]");
+      marker_31._popup.options.maxWidth = 300;
+      map.addLayer(marker_31)
+      
+      var marker_32_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_32 = L.marker([-0.708698, 
+							-74.9876],
+							{'icon':marker_32_icon}
+							);
+      marker_32.bindPopup("Base station: [ -0.70869833 -74.98762512]");
+      marker_32._popup.options.maxWidth = 300;
+      map.addLayer(marker_32)
+      
+      var marker_33_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_33 = L.marker([46.0465, 
+							-73.115],
+							{'icon':marker_33_icon}
+							);
+      marker_33.bindPopup("Base station: [ 46.04650497 -73.11495209]");
+      marker_33._popup.options.maxWidth = 300;
+      map.addLayer(marker_33)
+      
+      var marker_34_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_34 = L.marker([46.397, 
+							-72.4534],
+							{'icon':marker_34_icon}
+							);
+      marker_34.bindPopup("Base station: [ 46.39702606 -72.45341492]");
+      marker_34._popup.options.maxWidth = 300;
+      map.addLayer(marker_34)
+      
+      var marker_35_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_35 = L.marker([40.1156, 
+							-74.0335],
+							{'icon':marker_35_icon}
+							);
+      marker_35.bindPopup("Base station: [ 40.11561203 -74.03354645]");
+      marker_35._popup.options.maxWidth = 300;
+      map.addLayer(marker_35)
+      
+      var marker_36_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_36 = L.marker([38.9721, 
+							-74.8839],
+							{'icon':marker_36_icon}
+							);
+      marker_36.bindPopup("Base station: [ 38.97205353 -74.88393402]");
+      marker_36._popup.options.maxWidth = 300;
+      map.addLayer(marker_36)
+      
+      var marker_37_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_37 = L.marker([44.6907, 
+							-74.7297],
+							{'icon':marker_37_icon}
+							);
+      marker_37.bindPopup("Base station: [ 44.69065475 -74.72972107]");
+      marker_37._popup.options.maxWidth = 300;
+      map.addLayer(marker_37)
+      
+      var marker_38_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_38 = L.marker([-15.805, 
+							-74.0335],
+							{'icon':marker_38_icon}
+							);
+      marker_38.bindPopup("Base station: [-15.80502796 -74.03353119]");
+      marker_38._popup.options.maxWidth = 300;
+      map.addLayer(marker_38)
+      
+      var marker_39_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_39 = L.marker([40.1156, 
+							-74.0336],
+							{'icon':marker_39_icon}
+							);
+      marker_39.bindPopup("Base station: [ 40.11559677 -74.03356934]");
+      marker_39._popup.options.maxWidth = 300;
+      map.addLayer(marker_39)
+      
+      var marker_40_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_40 = L.marker([39.6251, 
+							-74.3542],
+							{'icon':marker_40_icon}
+							);
+      marker_40.bindPopup("Base station: [ 39.62508774 -74.35422516]");
+      marker_40._popup.options.maxWidth = 300;
+      map.addLayer(marker_40)
+      
+      var marker_41_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_41 = L.marker([-49.5958, 
+							-75.7804],
+							{'icon':marker_41_icon}
+							);
+      marker_41.bindPopup("Base station: [-49.59581757 -75.78043365]");
+      marker_41._popup.options.maxWidth = 300;
+      map.addLayer(marker_41)
+      
+      var marker_42_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_42 = L.marker([5.13462, 
+							-74.034],
+							{'icon':marker_42_icon}
+							);
+      marker_42.bindPopup("Base station: [  5.13461685 -74.03400421]");
+      marker_42._popup.options.maxWidth = 300;
+      map.addLayer(marker_42)
+      
+      var marker_43_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_43 = L.marker([37.9315, 
+							-75.3832],
+							{'icon':marker_43_icon}
+							);
+      marker_43.bindPopup("Base station: [ 37.93148041 -75.3832016 ]");
+      marker_43._popup.options.maxWidth = 300;
+      map.addLayer(marker_43)
+      
+      var marker_44_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_44 = L.marker([38.9448, 
+							-74.884],
+							{'icon':marker_44_icon}
+							);
+      marker_44.bindPopup("Base station: [ 38.94475174 -74.88396454]");
+      marker_44._popup.options.maxWidth = 300;
+      map.addLayer(marker_44)
+      
+      var marker_45_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_45 = L.marker([-12.3488, 
+							-75.2149],
+							{'icon':marker_45_icon}
+							);
+      marker_45.bindPopup("Base station: [-12.34879971 -75.21485901]");
+      marker_45._popup.options.maxWidth = 300;
+      map.addLayer(marker_45)
+      
+      var marker_46_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_46 = L.marker([37.1636, 
+							-76.5356],
+							{'icon':marker_46_icon}
+							);
+      marker_46.bindPopup("Base station: [ 37.16355515 -76.5355835 ]");
+      marker_46._popup.options.maxWidth = 300;
+      map.addLayer(marker_46)
+      
+      var marker_47_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_47 = L.marker([39.7258, 
+							-75.3443],
+							{'icon':marker_47_icon}
+							);
+      marker_47.bindPopup("Base station: [ 39.72580338 -75.34425354]");
+      marker_47._popup.options.maxWidth = 300;
+      map.addLayer(marker_47)
+      
+      var marker_48_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_48 = L.marker([39.5615, 
+							-75.9298],
+							{'icon':marker_48_icon}
+							);
+      marker_48.bindPopup("Base station: [ 39.5615387  -75.92977142]");
+      marker_48._popup.options.maxWidth = 300;
+      map.addLayer(marker_48)
+      
+      var marker_49_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_49 = L.marker([40.6014, 
+							-74.1085],
+							{'icon':marker_49_icon}
+							);
+      marker_49.bindPopup("Base station: [ 40.60137177 -74.1084671 ]");
+      marker_49._popup.options.maxWidth = 300;
+      map.addLayer(marker_49)
+      
+      var marker_50_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_50 = L.marker([39.9704, 
+							-74.899],
+							{'icon':marker_50_icon}
+							);
+      marker_50.bindPopup("Base station: [ 39.97043228 -74.8990097 ]");
+      marker_50._popup.options.maxWidth = 300;
+      map.addLayer(marker_50)
+      
+      var marker_51_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_51 = L.marker([44.2628, 
+							-76.6775],
+							{'icon':marker_51_icon}
+							);
+      marker_51.bindPopup("Base station: [ 44.26277924 -76.67749786]");
+      marker_51._popup.options.maxWidth = 300;
+      map.addLayer(marker_51)
+      
+      var marker_52_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_52 = L.marker([44.3997, 
+							-75.9739],
+							{'icon':marker_52_icon}
+							);
+      marker_52.bindPopup("Base station: [ 44.39972305 -75.97388458]");
+      marker_52._popup.options.maxWidth = 300;
+      map.addLayer(marker_52)
+      
+      var marker_53_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_53 = L.marker([45.0183, 
+							-74.7297],
+							{'icon':marker_53_icon}
+							);
+      marker_53.bindPopup("Base station: [ 45.01833344 -74.72972107]");
+      marker_53._popup.options.maxWidth = 300;
+      map.addLayer(marker_53)
+      
+      var marker_54_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_54 = L.marker([45.5561, 
+							-73.3264],
+							{'icon':marker_54_icon}
+							);
+      marker_54.bindPopup("Base station: [ 45.55611038 -73.3263855 ]");
+      marker_54._popup.options.maxWidth = 300;
+      map.addLayer(marker_54)
+      
+      var marker_55_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_55 = L.marker([36.8838, 
+							-76.3524],
+							{'icon':marker_55_icon}
+							);
+      marker_55.bindPopup("Base station: [ 36.88378143 -76.35240173]");
+      marker_55._popup.options.maxWidth = 300;
+      map.addLayer(marker_55)
+      
+      var marker_56_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_56 = L.marker([40.1156, 
+							-74.0336],
+							{'icon':marker_56_icon}
+							);
+      marker_56.bindPopup("Base station: [ 40.11558914 -74.03361511]");
+      marker_56._popup.options.maxWidth = 300;
+      map.addLayer(marker_56)
+      
+      var marker_57_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_57 = L.marker([36.8829, 
+							-76.3602],
+							{'icon':marker_57_icon}
+							);
+      marker_57.bindPopup("Base station: [ 36.88285446 -76.3602066 ]");
+      marker_57._popup.options.maxWidth = 300;
+      map.addLayer(marker_57)
+      
+      var marker_58_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_58 = L.marker([45.5491, 
+							-73.4967],
+							{'icon':marker_58_icon}
+							);
+      marker_58.bindPopup("Base station: [ 45.54908371 -73.49666595]");
+      marker_58._popup.options.maxWidth = 300;
+      map.addLayer(marker_58)
+      
+      var marker_59_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_59 = L.marker([38.3277, 
+							-75.1967],
+							{'icon':marker_59_icon}
+							);
+      marker_59.bindPopup("Base station: [ 38.32770157 -75.19669342]");
+      marker_59._popup.options.maxWidth = 300;
+      map.addLayer(marker_59)
+      
+      var marker_60_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_60 = L.marker([37.9315, 
+							-75.3826],
+							{'icon':marker_60_icon}
+							);
+      marker_60.bindPopup("Base station: [ 37.93147278 -75.38259888]");
+      marker_60._popup.options.maxWidth = 300;
+      map.addLayer(marker_60)
+      
+      var marker_61_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_61 = L.marker([39.6319, 
+							-74.3536],
+							{'icon':marker_61_icon}
+							);
+      marker_61.bindPopup("Base station: [ 39.63192749 -74.3535614 ]");
+      marker_61._popup.options.maxWidth = 300;
+      map.addLayer(marker_61)
+      
+      var marker_62_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_62 = L.marker([36.8829, 
+							-76.3601],
+							{'icon':marker_62_icon}
+							);
+      marker_62.bindPopup("Base station: [ 36.88285828 -76.36011505]");
+      marker_62._popup.options.maxWidth = 300;
+      map.addLayer(marker_62)
+      
+      var marker_63_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_63 = L.marker([37.5576, 
+							-75.8291],
+							{'icon':marker_63_icon}
+							);
+      marker_63.bindPopup("Base station: [ 37.55757523 -75.82906342]");
+      marker_63._popup.options.maxWidth = 300;
+      map.addLayer(marker_63)
+      
+      var marker_64_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_64 = L.marker([38.9447, 
+							-74.884],
+							{'icon':marker_64_icon}
+							);
+      marker_64.bindPopup("Base station: [ 38.94472885 -74.88401031]");
+      marker_64._popup.options.maxWidth = 300;
+      map.addLayer(marker_64)
+      
+      var marker_65_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_65 = L.marker([44.8306, 
+							-75.3128],
+							{'icon':marker_65_icon}
+							);
+      marker_65.bindPopup("Base station: [ 44.83055496 -75.31277466]");
+      marker_65._popup.options.maxWidth = 300;
+      map.addLayer(marker_65)
+      
+      var marker_66_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_66 = L.marker([36.9117, 
+							-76.0792],
+							{'icon':marker_66_icon}
+							);
+      marker_66.bindPopup("Base station: [ 36.91172409 -76.07923889]");
+      marker_66._popup.options.maxWidth = 300;
+      map.addLayer(marker_66)
+      
+      var marker_67_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_67 = L.marker([44.9825, 
+							-74.8478],
+							{'icon':marker_67_icon}
+							);
+      marker_67.bindPopup("Base station: [ 44.98249817 -74.84777832]");
+      marker_67._popup.options.maxWidth = 300;
+      map.addLayer(marker_67)
+      
+      var marker_68_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_68 = L.marker([44.7881, 
+							-75.4219],
+							{'icon':marker_68_icon}
+							);
+      marker_68.bindPopup("Base station: [ 44.78805542 -75.42194366]");
+      marker_68._popup.options.maxWidth = 300;
+      map.addLayer(marker_68)
+      
+      var marker_69_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_69 = L.marker([40.7673, 
+							-74.019],
+							{'icon':marker_69_icon}
+							);
+      marker_69.bindPopup("Base station: [ 40.76729202 -74.01903534]");
+      marker_69._popup.options.maxWidth = 300;
+      map.addLayer(marker_69)
+      
+      var marker_70_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_70 = L.marker([40.789, 
+							-73.9298],
+							{'icon':marker_70_icon}
+							);
+      marker_70.bindPopup("Base station: [ 40.78897476 -73.92977905]");
+      marker_70._popup.options.maxWidth = 300;
+      map.addLayer(marker_70)
+      
+      var marker_71_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_71 = L.marker([37.8877, 
+							-76.6331],
+							{'icon':marker_71_icon}
+							);
+      marker_71.bindPopup("Base station: [ 37.88772202 -76.6330719 ]");
+      marker_71._popup.options.maxWidth = 300;
+      map.addLayer(marker_71)
+      
+      var marker_72_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_72 = L.marker([44.2558, 
+							-76.0033],
+							{'icon':marker_72_icon}
+							);
+      marker_72.bindPopup("Base station: [ 44.25583267 -76.00333405]");
+      marker_72._popup.options.maxWidth = 300;
+      map.addLayer(marker_72)
+      
+      var marker_73_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_73 = L.marker([36.73, 
+							-76.0089],
+							{'icon':marker_73_icon}
+							);
+      marker_73.bindPopup("Base station: [ 36.72999954 -76.00886536]");
+      marker_73._popup.options.maxWidth = 300;
+      map.addLayer(marker_73)
+      
+      var marker_74_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_74 = L.marker([45.3042, 
+							-73.9283],
+							{'icon':marker_74_icon}
+							);
+      marker_74.bindPopup("Base station: [ 45.30416489 -73.9283371 ]");
+      marker_74._popup.options.maxWidth = 300;
+      map.addLayer(marker_74)
+      
+      var marker_75_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_75 = L.marker([43.2364, 
+							-77.0764],
+							{'icon':marker_75_icon}
+							);
+      marker_75.bindPopup("Base station: [ 43.23638916 -77.0763855 ]");
+      marker_75._popup.options.maxWidth = 300;
+      map.addLayer(marker_75)
+      
+      var marker_76_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_76 = L.marker([45.4078, 
+							-73.5672],
+							{'icon':marker_76_icon}
+							);
+      marker_76.bindPopup("Base station: [ 45.40777969 -73.5672226 ]");
+      marker_76._popup.options.maxWidth = 300;
+      map.addLayer(marker_76)
+      
+      var marker_77_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_77 = L.marker([47.1061, 
+							-74.0336],
+							{'icon':marker_77_icon}
+							);
+      marker_77.bindPopup("Base station: [ 47.10609818 -74.03356171]");
+      marker_77._popup.options.maxWidth = 300;
+      map.addLayer(marker_77)
+      
+      var marker_78_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_78 = L.marker([46.0465, 
+							-73.115],
+							{'icon':marker_78_icon}
+							);
+      marker_78.bindPopup("Base station: [ 46.04650497 -73.11495209]");
+      marker_78._popup.options.maxWidth = 300;
+      map.addLayer(marker_78)
+      
+      var marker_79_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_79 = L.marker([46.397, 
+							-72.4534],
+							{'icon':marker_79_icon}
+							);
+      marker_79.bindPopup("Base station: [ 46.39702606 -72.45341492]");
+      marker_79._popup.options.maxWidth = 300;
+      map.addLayer(marker_79)
+      
+      var marker_80_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_80 = L.marker([45.0183, 
+							-74.7297],
+							{'icon':marker_80_icon}
+							);
+      marker_80.bindPopup("Base station: [ 45.01833344 -74.72972107]");
+      marker_80._popup.options.maxWidth = 300;
+      map.addLayer(marker_80)
+      
+      var marker_81_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_81 = L.marker([45.5491, 
+							-73.4967],
+							{'icon':marker_81_icon}
+							);
+      marker_81.bindPopup("Base station: [ 45.54908371 -73.49666595]");
+      marker_81._popup.options.maxWidth = 300;
+      map.addLayer(marker_81)
+      
+      var marker_82_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_82 = L.marker([40.8218, 
+							-74.0191],
+							{'icon':marker_82_icon}
+							);
+      marker_82.bindPopup("Base station: [ 40.82183456 -74.0190506 ]");
+      marker_82._popup.options.maxWidth = 300;
+      map.addLayer(marker_82)
+      
+      var marker_83_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_83 = L.marker([38.3277, 
+							-75.1762],
+							{'icon':marker_83_icon}
+							);
+      marker_83.bindPopup("Base station: [ 38.3276825  -75.17623901]");
+      marker_83._popup.options.maxWidth = 300;
+      map.addLayer(marker_83)
+      
+      var marker_84_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_84 = L.marker([37.9315, 
+							-75.3826],
+							{'icon':marker_84_icon}
+							);
+      marker_84.bindPopup("Base station: [ 37.93146515 -75.38256836]");
+      marker_84._popup.options.maxWidth = 300;
+      map.addLayer(marker_84)
+      
+      var marker_85_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_85 = L.marker([44.636, 
+							-74.7297],
+							{'icon':marker_85_icon}
+							);
+      marker_85.bindPopup("Base station: [ 44.63603973 -74.72972107]");
+      marker_85._popup.options.maxWidth = 300;
+      map.addLayer(marker_85)
+      
+      var marker_86_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_86 = L.marker([39.9704, 
+							-74.8991],
+							{'icon':marker_86_icon}
+							);
+      marker_86.bindPopup("Base station: [ 39.9704361  -74.89905548]");
+      marker_86._popup.options.maxWidth = 300;
+      map.addLayer(marker_86)
+      
+      var marker_87_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_87 = L.marker([39.7258, 
+							-75.3443],
+							{'icon':marker_87_icon}
+							);
+      marker_87.bindPopup("Base station: [ 39.72583008 -75.34430695]");
+      marker_87._popup.options.maxWidth = 300;
+      map.addLayer(marker_87)
+      
+      var marker_88_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_88 = L.marker([40.6015, 
+							-74.1085],
+							{'icon':marker_88_icon}
+							);
+      marker_88.bindPopup("Base station: [ 40.60145187 -74.1084671 ]");
+      marker_88._popup.options.maxWidth = 300;
+      map.addLayer(marker_88)
+      
+      var marker_89_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_89 = L.marker([40.7673, 
+							-74.0191],
+							{'icon':marker_89_icon}
+							);
+      marker_89.bindPopup("Base station: [ 40.76729584 -74.01905823]");
+      marker_89._popup.options.maxWidth = 300;
+      map.addLayer(marker_89)
+      
+      var marker_90_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_90 = L.marker([39.6319, 
+							-74.3536],
+							{'icon':marker_90_icon}
+							);
+      marker_90.bindPopup("Base station: [ 39.63193893 -74.35360718]");
+      marker_90._popup.options.maxWidth = 300;
+      map.addLayer(marker_90)
+      
+      var marker_91_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_91 = L.marker([40.789, 
+							-73.9298],
+							{'icon':marker_91_icon}
+							);
+      marker_91.bindPopup("Base station: [ 40.78899765 -73.92979431]");
+      marker_91._popup.options.maxWidth = 300;
+      map.addLayer(marker_91)
+      
+      var marker_92_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_92 = L.marker([36.8829, 
+							-76.3602],
+							{'icon':marker_92_icon}
+							);
+      marker_92.bindPopup("Base station: [ 36.88288498 -76.36016083]");
+      marker_92._popup.options.maxWidth = 300;
+      map.addLayer(marker_92)
+      
+      var marker_93_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_93 = L.marker([36.8829, 
+							-76.3601],
+							{'icon':marker_93_icon}
+							);
+      marker_93.bindPopup("Base station: [ 36.88288879 -76.36014557]");
+      marker_93._popup.options.maxWidth = 300;
+      map.addLayer(marker_93)
+      
+      var marker_94_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_94 = L.marker([36.9117, 
+							-76.0792],
+							{'icon':marker_94_icon}
+							);
+      marker_94.bindPopup("Base station: [ 36.91172409 -76.07923889]");
+      marker_94._popup.options.maxWidth = 300;
+      map.addLayer(marker_94)
+      
+      var marker_95_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_95 = L.marker([40.1156, 
+							-74.0336],
+							{'icon':marker_95_icon}
+							);
+      marker_95.bindPopup("Base station: [ 40.11560822 -74.03357697]");
+      marker_95._popup.options.maxWidth = 300;
+      map.addLayer(marker_95)
+      
+      var marker_96_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_96 = L.marker([37.1636, 
+							-76.5356],
+							{'icon':marker_96_icon}
+							);
+      marker_96.bindPopup("Base station: [ 37.16360474 -76.5355835 ]");
+      marker_96._popup.options.maxWidth = 300;
+      map.addLayer(marker_96)
+      
+      var marker_97_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_97 = L.marker([37.5576, 
+							-75.8291],
+							{'icon':marker_97_icon}
+							);
+      marker_97.bindPopup("Base station: [ 37.55758667 -75.82907867]");
+      marker_97._popup.options.maxWidth = 300;
+      map.addLayer(marker_97)
+      
+      var marker_98_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_98 = L.marker([38.3277, 
+							-75.1967],
+							{'icon':marker_98_icon}
+							);
+      marker_98.bindPopup("Base station: [ 38.32772827 -75.19671631]");
+      marker_98._popup.options.maxWidth = 300;
+      map.addLayer(marker_98)
+      
+      var marker_99_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_99 = L.marker([37.8878, 
+							-76.633],
+							{'icon':marker_99_icon}
+							);
+      marker_99.bindPopup("Base station: [ 37.88777542 -76.63303375]");
+      marker_99._popup.options.maxWidth = 300;
+      map.addLayer(marker_99)
+      
+      var marker_100_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_100 = L.marker([39.5616, 
+							-75.9298],
+							{'icon':marker_100_icon}
+							);
+      marker_100.bindPopup("Base station: [ 39.56156158 -75.92979431]");
+      marker_100._popup.options.maxWidth = 300;
+      map.addLayer(marker_100)
+      
+      var marker_101_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_101 = L.marker([45.0183, 
+							-74.7297],
+							{'icon':marker_101_icon}
+							);
+      marker_101.bindPopup("Base station: [ 45.01833344 -74.72972107]");
+      marker_101._popup.options.maxWidth = 300;
+      map.addLayer(marker_101)
+      
+      var marker_102_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_102 = L.marker([36.73, 
+							-76.0089],
+							{'icon':marker_102_icon}
+							);
+      marker_102.bindPopup("Base station: [ 36.72999954 -76.00888062]");
+      marker_102._popup.options.maxWidth = 300;
+      map.addLayer(marker_102)
+      
+      var marker_103_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_103 = L.marker([45.5561, 
+							-73.3264],
+							{'icon':marker_103_icon}
+							);
+      marker_103.bindPopup("Base station: [ 45.55611038 -73.3263855 ]");
+      marker_103._popup.options.maxWidth = 300;
+      map.addLayer(marker_103)
+      
+      var marker_104_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_104 = L.marker([45.5491, 
+							-73.4967],
+							{'icon':marker_104_icon}
+							);
+      marker_104.bindPopup("Base station: [ 45.54908371 -73.49666595]");
+      marker_104._popup.options.maxWidth = 300;
+      map.addLayer(marker_104)
+      
+      var marker_105_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_105 = L.marker([37.9315, 
+							-75.3826],
+							{'icon':marker_105_icon}
+							);
+      marker_105.bindPopup("Base station: [ 37.93151093 -75.38257599]");
+      marker_105._popup.options.maxWidth = 300;
+      map.addLayer(marker_105)
+      
+      var marker_106_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_106 = L.marker([38.9448, 
+							-74.884],
+							{'icon':marker_106_icon}
+							);
+      marker_106.bindPopup("Base station: [ 38.94475555 -74.88397217]");
+      marker_106._popup.options.maxWidth = 300;
+      map.addLayer(marker_106)
+      
+      var marker_107_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_107 = L.marker([44.8306, 
+							-75.3128],
+							{'icon':marker_107_icon}
+							);
+      marker_107.bindPopup("Base station: [ 44.83055496 -75.31277466]");
+      marker_107._popup.options.maxWidth = 300;
+      map.addLayer(marker_107)
+      
+      var marker_108_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_108 = L.marker([45.3042, 
+							-73.9283],
+							{'icon':marker_108_icon}
+							);
+      marker_108.bindPopup("Base station: [ 45.30416489 -73.9283371 ]");
+      marker_108._popup.options.maxWidth = 300;
+      map.addLayer(marker_108)
+      
+      var marker_109_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_109 = L.marker([44.9825, 
+							-74.8478],
+							{'icon':marker_109_icon}
+							);
+      marker_109.bindPopup("Base station: [ 44.98249817 -74.84777832]");
+      marker_109._popup.options.maxWidth = 300;
+      map.addLayer(marker_109)
+      
+      var marker_110_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_110 = L.marker([44.2628, 
+							-76.6775],
+							{'icon':marker_110_icon}
+							);
+      marker_110.bindPopup("Base station: [ 44.26277924 -76.67749786]");
+      marker_110._popup.options.maxWidth = 300;
+      map.addLayer(marker_110)
+      
+      var marker_111_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_111 = L.marker([44.3997, 
+							-75.9739],
+							{'icon':marker_111_icon}
+							);
+      marker_111.bindPopup("Base station: [ 44.39972305 -75.97388458]");
+      marker_111._popup.options.maxWidth = 300;
+      map.addLayer(marker_111)
+      
+      var marker_112_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_112 = L.marker([44.2558, 
+							-76.0033],
+							{'icon':marker_112_icon}
+							);
+      marker_112.bindPopup("Base station: [ 44.25583267 -76.00333405]");
+      marker_112._popup.options.maxWidth = 300;
+      map.addLayer(marker_112)
+      
+      var marker_113_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_113 = L.marker([45.4078, 
+							-73.5672],
+							{'icon':marker_113_icon}
+							);
+      marker_113.bindPopup("Base station: [ 45.40777969 -73.5672226 ]");
+      marker_113._popup.options.maxWidth = 300;
+      map.addLayer(marker_113)
+      
+      var marker_114_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_114 = L.marker([44.7881, 
+							-75.4219],
+							{'icon':marker_114_icon}
+							);
+      marker_114.bindPopup("Base station: [ 44.78805542 -75.42194366]");
+      marker_114._popup.options.maxWidth = 300;
+      map.addLayer(marker_114)
+      
+      var marker_115_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_115 = L.marker([-87.5136, 
+							-73.7348],
+							{'icon':marker_115_icon}
+							);
+      marker_115.bindPopup("Base station: [-87.51364899 -73.73484039]");
+      marker_115._popup.options.maxWidth = 300;
+      map.addLayer(marker_115)
+      
+      var marker_116_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_116 = L.marker([46.0465, 
+							-73.115],
+							{'icon':marker_116_icon}
+							);
+      marker_116.bindPopup("Base station: [ 46.04650497 -73.11495209]");
+      marker_116._popup.options.maxWidth = 300;
+      map.addLayer(marker_116)
+      
+      var marker_117_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_117 = L.marker([43.2364, 
+							-77.0764],
+							{'icon':marker_117_icon}
+							);
+      marker_117.bindPopup("Base station: [ 43.23638916 -77.0763855 ]");
+      marker_117._popup.options.maxWidth = 300;
+      map.addLayer(marker_117)
+      
+      var marker_118_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_118 = L.marker([29.3988, 
+							-75.3513],
+							{'icon':marker_118_icon}
+							);
+      marker_118.bindPopup("Base station: [ 29.39878654 -75.35127258]");
+      marker_118._popup.options.maxWidth = 300;
+      map.addLayer(marker_118)
+      
+      var marker_119_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_119 = L.marker([40.1292, 
+							-74.0063],
+							{'icon':marker_119_icon}
+							);
+      marker_119.bindPopup("Base station: [ 40.12921143 -74.00626373]");
+      marker_119._popup.options.maxWidth = 300;
+      map.addLayer(marker_119)
+      
+      var marker_120_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_120 = L.marker([37.2181, 
+							-75.9739],
+							{'icon':marker_120_icon}
+							);
+      marker_120.bindPopup("Base station: [ 37.21806717 -75.97389221]");
+      marker_120._popup.options.maxWidth = 300;
+      map.addLayer(marker_120)
+      
+      var marker_121_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_121 = L.marker([-3.49534, 
+							-74.3428],
+							{'icon':marker_121_icon}
+							);
+      marker_121.bindPopup("Base station: [ -3.4953351  -74.34282684]");
+      marker_121._popup.options.maxWidth = 300;
+      map.addLayer(marker_121)
+      
+      var marker_122_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_122 = L.marker([45.5491, 
+							-73.4967],
+							{'icon':marker_122_icon}
+							);
+      marker_122.bindPopup("Base station: [ 45.54908371 -73.49666595]");
+      marker_122._popup.options.maxWidth = 300;
+      map.addLayer(marker_122)
+      
+      var marker_123_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_123 = L.marker([-2.99246, 
+							-72.0136],
+							{'icon':marker_123_icon}
+							);
+      marker_123.bindPopup("Base station: [ -2.99246335 -72.01361084]");
+      marker_123._popup.options.maxWidth = 300;
+      map.addLayer(marker_123)
+      
+      var marker_124_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_124 = L.marker([40.7673, 
+							-74.019],
+							{'icon':marker_124_icon}
+							);
+      marker_124.bindPopup("Base station: [ 40.76727676 -74.01900482]");
+      marker_124._popup.options.maxWidth = 300;
+      map.addLayer(marker_124)
+      
+
+      
+      var polygon_1 = new L.RegularPolygonMarker(new L.LatLng(34.7179, -76.6876), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: '#9e0142',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 5
+});
+      
+      map.addLayer(polygon_1)
+      
+      var polygon_2 = new L.RegularPolygonMarker(new L.LatLng(40.6534, -74.1075), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: '#a90d44',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 5
+});
+      
+      map.addLayer(polygon_2)
+      
+      var polygon_3 = new L.RegularPolygonMarker(new L.LatLng(36.8794, -76.3278), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: '#b41947',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 5
+});
+      
+      map.addLayer(polygon_3)
+      
+      var polygon_4 = new L.RegularPolygonMarker(new L.LatLng(39.8945, -75.1765), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: '#bf2549',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 5
+});
+      
+      map.addLayer(polygon_4)
+      
+      var polygon_5 = new L.RegularPolygonMarker(new L.LatLng(40.8425, -72.4834), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: '#c9314c',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 5
+});
+      
+      map.addLayer(polygon_5)
+      
+      var polygon_6 = new L.RegularPolygonMarker(new L.LatLng(39.7519, -74.1141), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: '#d63f4f',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 5
+});
+      
+      map.addLayer(polygon_6)
+      
+      var polygon_7 = new L.RegularPolygonMarker(new L.LatLng(41.3577, -72.0882), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: '#dc484c',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 5
+});
+      
+      map.addLayer(polygon_7)
+      
+      var polygon_8 = new L.RegularPolygonMarker(new L.LatLng(40.8158, -73.7723), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: '#e2514a',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 5
+});
+      
+      map.addLayer(polygon_8)
+      
+      var polygon_9 = new L.RegularPolygonMarker(new L.LatLng(36.7224, -76.2163), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: '#e85a47',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 5
+});
+      
+      map.addLayer(polygon_9)
+      
+      var polygon_10 = new L.RegularPolygonMarker(new L.LatLng(38.9541, -74.881), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: '#f06645',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 5
+});
+      
+      map.addLayer(polygon_10)
+      
+      var polygon_11 = new L.RegularPolygonMarker(new L.LatLng(39.7219, -75.5232), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: '#f56f44',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 5
+});
+      
+      map.addLayer(polygon_11)
+      
+      var polygon_12 = new L.RegularPolygonMarker(new L.LatLng(34.2188, -77.9535), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: '#f77c4a',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 5
+});
+      
+      map.addLayer(polygon_12)
+      
+      var polygon_13 = new L.RegularPolygonMarker(new L.LatLng(45.5351, -73.5355), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: '#f88950',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 5
+});
+      
+      map.addLayer(polygon_13)
+      
+      var polygon_14 = new L.RegularPolygonMarker(new L.LatLng(40.4024, -73.987), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: '#fa9656',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 5
+});
+      
+      map.addLayer(polygon_14)
+      
+      var polygon_15 = new L.RegularPolygonMarker(new L.LatLng(39.5325, -75.8244), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: '#fca55d',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 5
+});
+      
+      map.addLayer(polygon_15)
+      
+      var polygon_16 = new L.RegularPolygonMarker(new L.LatLng(42.6172, -73.7573), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: '#feb163',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 5
+});
+      
+      map.addLayer(polygon_16)
+      
+      var polygon_17 = new L.RegularPolygonMarker(new L.LatLng(39.378, -74.4231), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: '#febb6c',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 5
+});
+      
+      map.addLayer(polygon_17)
+      
+      var polygon_18 = new L.RegularPolygonMarker(new L.LatLng(41.2559, -72.0097), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: '#fec574',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 5
+});
+      
+      map.addLayer(polygon_18)
+      
+      var polygon_19 = new L.RegularPolygonMarker(new L.LatLng(36.9141, -76.0801), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: '#fed17e',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 5
+});
+      
+      map.addLayer(polygon_19)
+      
+      var polygon_20 = new L.RegularPolygonMarker(new L.LatLng(38.7871, -76.2194), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: '#feda86',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 5
+});
+      
+      map.addLayer(polygon_20)
+      
+      var polygon_21 = new L.RegularPolygonMarker(new L.LatLng(39.1148, -74.7122), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: '#ffe38f',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 5
+});
+      
+      map.addLayer(polygon_21)
+      
+      var polygon_22 = new L.RegularPolygonMarker(new L.LatLng(39.2538, -76.5724), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: '#ffe999',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 5
+});
+      
+      map.addLayer(polygon_22)
+      
+      var polygon_23 = new L.RegularPolygonMarker(new L.LatLng(39.5462, -75.5476), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: '#ffefa4',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 5
+});
+      
+      map.addLayer(polygon_23)
+      
+      var polygon_24 = new L.RegularPolygonMarker(new L.LatLng(40.1021, -74.0402), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: '#fff6b0',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 5
+});
+      
+      map.addLayer(polygon_24)
+      
+      var polygon_25 = new L.RegularPolygonMarker(new L.LatLng(39.2942, -76.2055), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: '#fffcba',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 5
+});
+      
+      map.addLayer(polygon_25)
+      
+      var polygon_26 = new L.RegularPolygonMarker(new L.LatLng(44.706, -75.5176), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: '#fdffbb',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 5
+});
+      
+      map.addLayer(polygon_26)
+      
+      var polygon_27 = new L.RegularPolygonMarker(new L.LatLng(38.7836, -75.1287), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: '#f8fdb4',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 5
+});
+      
+      map.addLayer(polygon_27)
+      
+      var polygon_28 = new L.RegularPolygonMarker(new L.LatLng(39.5854, -75.5922), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: '#f2faab',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 5
+});
+      
+      map.addLayer(polygon_28)
+      
+      var polygon_29 = new L.RegularPolygonMarker(new L.LatLng(38.9727, -76.4749), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: '#edf8a3',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 5
+});
+      
+      map.addLayer(polygon_29)
+      
+      var polygon_30 = new L.RegularPolygonMarker(new L.LatLng(39.8143, -75.3962), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: '#e8f69b',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 5
+});
+      
+      map.addLayer(polygon_30)
+      
+      var polygon_31 = new L.RegularPolygonMarker(new L.LatLng(41.2942, -72.9058), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: '#dff39a',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 5
+});
+      
+      map.addLayer(polygon_31)
+      
+      var polygon_32 = new L.RegularPolygonMarker(new L.LatLng(36.9184, -76.179), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: '#d4ee9c',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 5
+});
+      
+      map.addLayer(polygon_32)
+      
+      var polygon_33 = new L.RegularPolygonMarker(new L.LatLng(38.9662, -76.2404), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: '#c6e89f',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 5
+});
+      
+      map.addLayer(polygon_33)
+      
+      var polygon_34 = new L.RegularPolygonMarker(new L.LatLng(37.0169, -76.3411), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: '#bae4a1',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 5
+});
+      
+      map.addLayer(polygon_34)
+      
+      var polygon_35 = new L.RegularPolygonMarker(new L.LatLng(38.9402, -75.3179), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: '#afdfa3',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 5
+});
+      
+      map.addLayer(polygon_35)
+      
+      var polygon_36 = new L.RegularPolygonMarker(new L.LatLng(41.2489, -73.9556), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: '#a2daa4',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 5
+});
+      
+      map.addLayer(polygon_36)
+      
+      var polygon_37 = new L.RegularPolygonMarker(new L.LatLng(35.2027, -75.7296), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: '#91d3a5',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 5
+});
+      
+      map.addLayer(polygon_37)
+      
+      var polygon_38 = new L.RegularPolygonMarker(new L.LatLng(41.1711, -73.1802), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: '#84cea5',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 5
+});
+      
+      map.addLayer(polygon_38)
+      
+      var polygon_39 = new L.RegularPolygonMarker(new L.LatLng(40.4175, -74.0326), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: '#76c9a5',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 5
+});
+      
+      map.addLayer(polygon_39)
+      
+      var polygon_40 = new L.RegularPolygonMarker(new L.LatLng(40.9492, -73.0711), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: '#69c3a5',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 5
+});
+      
+      map.addLayer(polygon_40)
+      
+      var polygon_41 = new L.RegularPolygonMarker(new L.LatLng(40.8005, -73.8951), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: '#5eb9a9',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 5
+});
+      
+      map.addLayer(polygon_41)
+      
+      var polygon_42 = new L.RegularPolygonMarker(new L.LatLng(41.091, -72.3595), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: '#51abaf',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 5
+});
+      
+      map.addLayer(polygon_42)
+      
+      var polygon_43 = new L.RegularPolygonMarker(new L.LatLng(38.9128, -76.4083), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: '#47a0b3',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 5
+});
+      
+      map.addLayer(polygon_43)
+      
+      var polygon_44 = new L.RegularPolygonMarker(new L.LatLng(38.9685, -74.9587), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: '#3d95b8',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 5
+});
+      
+      map.addLayer(polygon_44)
+      
+      var polygon_45 = new L.RegularPolygonMarker(new L.LatLng(40.4937, -73.6484), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: '#3389bd',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 5
+});
+      
+      map.addLayer(polygon_45)
+      
+      var polygon_46 = new L.RegularPolygonMarker(new L.LatLng(40.453, -74.0506), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: '#3b7cb7',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 5
+});
+      
+      map.addLayer(polygon_46)
+      
+      var polygon_47 = new L.RegularPolygonMarker(new L.LatLng(39.5725, -76.102), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: '#4470b2',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 5
+});
+      
+      map.addLayer(polygon_47)
+      
+      var polygon_48 = new L.RegularPolygonMarker(new L.LatLng(34.205, -77.8133), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: '#4d65ad',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 5
+});
+      
+      map.addLayer(polygon_48)
+      
+      var polygon_49 = new L.RegularPolygonMarker(new L.LatLng(38.9551, -75.1846), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: '#555aa7',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 5
+});
+      
+      map.addLayer(polygon_49)
+      
+      var polygon_50 = new L.RegularPolygonMarker(new L.LatLng(39.59869384765625, -74.93002319335938), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: '#000000',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 15
+});
+      polygon_50.bindPopup("<a href=\"http://stamen.com\">Stamen Design</a>");
+      polygon_50._popup.options.maxWidth = 300;
+      map.addLayer(polygon_50)
+      
+
+      
+
+      
+
+      
+
+      
+
+
+
+
+   </script>
+<style>.embed-container { position: relative; padding-bottom: 56.25%; padding-top: 30px; height: 0; overflow: hidden; max-width: 100%; height: auto; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://www.flickr.com/photos/104687437@N03/albums/72157645323569588/player/' frameborder='0' allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe></div>
+</body>
